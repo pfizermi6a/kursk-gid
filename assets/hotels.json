@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "h1",
+      "geometry": { "type": "Point", "coordinates": [51.736765, 36.191784] },
+      "properties": {
+        "name": "Гостиница Курск",
+        "description": "Комфортный отель в центре города.",
+        "category": "hotel"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "h2",
+      "geometry": { "type": "Point", "coordinates": [51.728, 36.184] },
+      "properties": {
+        "name": "Отель Европа",
+        "description": "Современный отель рядом с историческим центром.",
+        "category": "hotel"
+      }
+    }
+  ]
+}

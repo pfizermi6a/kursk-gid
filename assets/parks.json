@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "p1",
+      "geometry": { "type": "Point", "coordinates": [51.720247, 36.171222] },
+      "properties": {
+        "name": "Парк им. Дзержинского",
+        "description": "Популярный парк для прогулок и отдыха.",
+        "category": "park"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "p2",
+      "geometry": { "type": "Point", "coordinates": [51.732, 36.205] },
+      "properties": {
+        "name": "Парк Боева дача",
+        "description": "Природный парк с озером и аллеями.",
+        "category": "park"
+      }
+    }
+  ]
+}

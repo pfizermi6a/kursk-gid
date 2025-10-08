@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "c1",
+      "geometry": { "type": "Point", "coordinates": [51.726, 36.190] },
+      "properties": {
+        "name": "Кафе «На углу»",
+        "description": "Уютное кафе с видом на площадь.",
+        "category": "cafe"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "c2",
+      "geometry": { "type": "Point", "coordinates": [51.724, 36.197] },
+      "properties": {
+        "name": "Ресторан «Старый город»",
+        "description": "Традиционная кухня и исторический интерьер.",
+        "category": "cafe"
+      }
+    }
+  ]
+}

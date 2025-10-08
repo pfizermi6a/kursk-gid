@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "a1",
+      "geometry": { "type": "Point", "coordinates": [51.727693, 36.192567] },
+      "properties": {
+        "name": "Знаменский кафедральный собор",
+        "description": "Главный собор Курска.",
+        "category": "attraction"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a2",
+      "geometry": { "type": "Point", "coordinates": [51.7303, 36.188] },
+      "properties": {
+        "name": "Курский областной краеведческий музей",
+        "description": "Музей истории и культуры Курской области.",
+        "category": "attraction"
+      }
+    }
+  ]
+}

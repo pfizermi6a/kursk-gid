@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Путешествуй по Курску — Прототип</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --muted: #6b6b6b;
+      --accent: #1e5631;
+      --accent-soft: #cfe9d1;
+      --sand: #fff6e8;
+      --card-shadow: 0 6px 18px rgba(18,24,40,0.06);
+      --radius: 12px;
+      --max-w: 1100px;
+      --gap: 20px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: #131315; line-height: 1.45; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Layout */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 28px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid #f0f0f0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 52px; height: 52px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), #2f8a4a); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 22px; }
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a { font-weight: 500; transition: opacity 0.2s ease; }
+    nav a:hover { opacity: 0.7; }
+    .cta { background: var(--accent); color: #fff; padding: 10px 14px; border-radius: 10px; font-weight: 600; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1fr 420px; gap: 24px; align-items: center; padding: 40px 0; }
+    .hero-left h1 { font-size: 34px; margin: 0 0 12px; }
+    .hero-left p { color: var(--muted); margin: 0 0 20px; }
+    .hero-actions { display: flex; gap: 12px; }
+    .btn { padding: 12px 16px; border-radius: 10px; cursor: pointer; border: 1px solid transparent; font-weight: 500; }
+    .btn.ghost { background: transparent; border-color: #e6e6e6; }
+    .btn.primary { background: var(--accent); color: white; }
+
+    .hero-right { border-radius: var(--radius); overflow: hidden; box-shadow: var(--card-shadow); height: 320px; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 4px; color: white; }
+    .hero-right .meta { background: linear-gradient(0deg, rgba(0,0,0,0.5), transparent); padding: 10px; border-radius: 10px; }
+
+    /* Sections */
+    section { padding: 28px 0; border-top: 1px solid #f2f2f2; }
+    .section-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .grid { display: grid; gap: var(--gap); }
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+
+    /* Cards */
+    .card { background: white; border-radius: 14px; box-shadow: var(--card-shadow); overflow: hidden; }
+    .card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .card-body { padding: 14px; }
+    .card-title { font-weight: 600; margin: 0 0 8px; }
+    .card-desc { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+    .card-meta { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Map placeholder */
+    .map { height: 420px; border-radius: 12px; background: linear-gradient(180deg,#e9f6ee,#f8fff9); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 600; box-shadow: var(--card-shadow); }
+    .map small { display: block; color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+    /* Filters */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip { padding: 8px 12px; border-radius: 999px; background: #fff; border: 1px solid #eee; font-size: 14px; cursor: pointer; }
+
+    /* Footer */
+    footer { padding: 20px 0; color: var(--muted); font-size: 14px; border-top: 1px solid #f0f0f0; margin-top: 40px; }
+
+    /* Убираем мобильную версию */
+    @media (max-width: 980px) {
+      body::before {
+        content: "Мобильная версия временно недоступна.";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        font-size: 18px;
+        color: var(--muted);
+        padding: 40px;
+      }
+      body > * { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">К</div>
+        <div>
+          <div style="font-weight:700;">Путешествуй по Курску</div>
+          <div class="small muted">Лаконичный гид по городу</div>
+        </div>
+      </div>
+      <nav>
+        <!-- <a href="#routes">Маршруты</a>
+        <a href="#places">Достопримечательности</a>
+        <a href="#map">Карта</a> -->
+        <a class="cta" href="#about">О проекте</a>
+        <!-- <a class="cta" href="#routes">Спланировать путешествие</a> -->
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Открой для себя Курск — просто и удобно</h1>
+          <p>Спланируй прогулку по историческому центру, найди интересные места и маршруты для отдыха.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#routes">Спланировать путешествие</a>
+            <a class="btn ghost" href="#map">Посмотреть маршруты</a>
+          </div>
+          <div style="margin-top:18px; color:var(--muted); font-size:14px;">Подборка маршрутов и достопримечательностей от команды проекта.</div>
+        </div>
+        <div class="hero-right" style="background-image:url('../images/arka.jpg')">
+          <div class="meta">Курск</div>
+        </div>
+      </section>
+
+      <!-- Routes -->
+      <section id="routes">
+        <div class="section-head">
+          <h2>Популярные маршруты</h2>
+          <div class="small muted">3 маршрута, подготовленных командой</div>
+        </div>
+        <div class="grid cards-3">
+          <article class="card">
+            <img src="../images/historyplace.jpg" alt="Исторический маршрут">
+            <div class="card-body">
+              <div class="card-title">Исторический Курск (пешком)</div>
+              <p class="card-desc">Прогулка по центру: памятники, соборы и старинные улицы. 2–3 часа.</p>
+              <div class="card-meta">
+                <span class="small muted">Длительность: 2–3 ч</span>
+                <button class="btn ghost" onclick="openModal('Исторический Курск', 'Описание исторического маршрута...', '../images/historyplace.jpg')">Подробнее</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="../images/religia.jpg" alt="Религиозные места">
+            <div class="card-body">
+              <div class="card-title">Религиозные места</div>
+              <p class="card-desc">Соборы, часовни и духовные памятники — маршрут с подсказками.</p>
+              <div class="card-meta">
+                <span class="small muted">Длительность: 1–2 ч</span>
+                <button class="btn ghost" onclick="openModal('Религиозные места', 'Описание религиозного маршрута...', '../images/religia.jpg')">Подробнее</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="../images/naberejnaya.jpg" alt="Природные прогулки">
+            <div class="card-body">
+              <div class="card-title">Природа и прогулки</div>
+              <p class="card-desc">Парки, набережная и природные уголки вокруг города.</p>
+              <div class="card-meta">
+                <span class="small muted">Длительность: 2–4 ч</span>
+                <button class="btn ghost" onclick="openModal('Природа и прогулки', 'Описание природного маршрута...', '../images/naberejnaya.jpg')">Подробнее</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Places -->
+      <section id="places">
+        <div class="section-head">
+          <h2>Достопримечательности</h2>
+          <div class="filters">
+            <button class="chip">История</button>
+            <button class="chip">Культура</button>
+            <button class="chip">Природа</button>
+            <button class="chip">Для детей</button>
+          </div>
+        </div>
+        <div class="grid cards-3">
+          <article class="card">
+            <img src="../images/tank.JPG" alt="Памятник">
+            <div class="card-body">
+              <div class="card-title">Памятник</div>
+              <p class="card-desc">Короткая заметка о памятнике и его значении.</p>
+              <div class="card-meta">
+                <span class="small muted">Адрес: ...</span>
+                <a class="btn ghost" href="#map">Показать на карте</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="../images/znamsobor.jpg" alt="Собор">
+            <div class="card-body">
+              <div class="card-title">Собор</div>
+              <p class="card-desc">Краткая историческая справка и часы работы.</p>
+              <div class="card-meta">
+                <span class="small muted">Адрес: ...</span>
+                <a class="btn ghost" href="#map">Показать на карте</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="../images/parkdzerjinskogo.jpg" alt="Парк">
+            <div class="card-body">
+              <div class="card-title">Городской парк</div>
+              <p class="card-desc">Зона отдыха, прогулочные аллеи, детская площадка.</p>
+              <div class="card-meta">
+                <span class="small muted">Адрес: ...</span>
+                <a class="btn ghost" href="#map">Показать на карте</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section id="mapSection">
+        <div class="section-head">
+          <h2>Карта</h2>
+          <div class="muted small">Интерактивная карта города Курск</div>
+        </div>
+
+        <!-- Панель фильтров -->
+        <div id="mapControls" style="margin-bottom:12px;display:flex;gap:12px;align-items:center;">
+          <label><input type="checkbox" value="attraction" checked> Достопримечательности</label>
+          <label><input type="checkbox" value="park" checked> Парки</label>
+          <label><input type="checkbox" value="hotel" checked> Отели</label>
+          <label><input type="checkbox" value="cafe" checked> Кафе / рестораны</label>
+          <button id="resetFilters" class="btn">Сбросить фильтр</button>
+        </div>
+
+        <!-- Контейнер карты -->
+        <div id="map" class="map"></div>
+      </section>
+
+    <!-- Подключение API Яндекс.Карт и нашего JS -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=515fc7e4-901c-467b-b828-75ed6864250e&lang=ru_RU" type="text/javascript"></script>
+    <script src="../js/map.js"></script>
+
+      <!-- About -->
+      <section id="about">
+        <div class="section-head">
+          <h2>О проекте</h2>
+        </div>
+        <div class="card" style="padding:18px;">
+          <p class="muted">«Путешествуй по Курску» — интерактивный гид, созданный студентами. Проект объединяет достопримечательности, маршруты и карту города.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div>© Проект «Путешествуй по Курску»</div>
+        <div class="small muted">Контакты: команда | Университет</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
