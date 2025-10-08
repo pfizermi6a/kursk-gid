@@ -1,4 +1,4 @@
-// js/map.js
+// js/map.jsdwadwadaw
 
 const dataFiles = [
   "../assets/attractions.json",
