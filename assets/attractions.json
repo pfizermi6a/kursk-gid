@@ -20,6 +20,16 @@
         "description": "Музей истории и культуры Курской области.",
         "category": "attraction"
       }
+    },
+    {
+      "type": "Feature",
+      "id": "a3",
+      "geometry": { "type": "Point", "coordinates": [51.718986, 36.163772] },
+      "properties": {
+        "name": "Памятник танкистам - героям Курской битвы",
+        "description": "Короткая заметка о памятнике и его значении.",
+        "category": "attraction"
+      }
     }
   ]
 }
