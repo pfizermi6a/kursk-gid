@@ -1,0 +1,34 @@
+:root {
+    --bg: #ffffff;
+    --muted: #6b6b6b;
+    --accent: #1e5631;
+    --accent-soft: #cfe9d1;
+    --sand: #fff6e8;
+    --card-shadow: 0 6px 18px rgba(18,24,40,0.06);
+    --radius: 12px;
+    --max-w: 1100px;
+    --gap: 20px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+footer { padding: 20px 0; color: var(--muted); font-size: 14px; border-top: 1px solid #f0f0f0; margin-top: 40px; }
+
+.map-legend {
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  font-size: 14px;
+}
+.map-legend ul { list-style: none; margin: 6px 0 0; padding: 0; }
+.map-legend li { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+.map-legend .dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  display: inline-block;
+}
+.map-legend .dot.red { background: #d9534f; }
+.map-legend .dot.green { background: #5cb85c; }
+.map-legend .dot.blue { background: #0275d8; }
+.map-legend .dot.violet { background: #8a2be2; }

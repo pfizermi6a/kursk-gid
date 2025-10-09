@@ -76,4 +76,18 @@ function initMap() {
   checkboxes.forEach((c) => c.addEventListener("change", applyFilter));
 
   applyFilter();
+
+  // --- Легенда ---
+  const legend = document.createElement("div");
+  legend.className = "map-legend";
+  legend.innerHTML = `
+    <strong>Легенда</strong>
+    <ul>
+      <li><span class="dot red"></span> Достопримечательности</li>
+      <li><span class="dot green"></span> Парки</li>
+      <li><span class="dot blue"></span> Отели</li>
+      <li><span class="dot violet"></span> Кафе и рестораны</li>
+    </ul>
+  `;
+  document.getElementById("mapSection").appendChild(legend);
 }
